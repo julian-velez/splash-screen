@@ -1,0 +1,49 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.splash-screen {
+	background-color: #000;
+	color: #fff;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.main-content {
+	display: none;
+}
+
+/* Animación para el fade-in del contenido principal */
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/* Animación para el fade-out del splash screen */
+@keyframes fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+		display: none;
+	}
+}
+
+/* Aplicamos las animaciones a los elementos correspondientes */
+.main-content.show {
+	animation: fade-in 1s;
+	display: block;
+}
+
+.splash-screen.hide {
+	animation: fade-out 1s;
+}
